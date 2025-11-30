@@ -1,24 +1,28 @@
 <template>
-  <teleport to="body">
-    <transition name="fade">
-      <div v-if="modelValue" class="status-backdrop">
-        <div class="status-card">
-          <h2 class="status-title">
-            {{ title }}
-          </h2>
-          <p class="status-message">
-            {{ message }}
-          </p>
-          <button class="status-btn" type="button" @click="close">
-            CLOSE
-          </button>
-        </div>
+  <transition name="fade">
+    <div v-if="modelValue" class="status-backdrop">
+      <div class="status-card">
+        <h2 class="status-title">
+          {{ title }}
+        </h2>
+        <p class="status-message">
+          {{ message }}
+        </p>
+        <button class="status-btn" type="button" @click="close">
+          CLOSE
+        </button>
       </div>
-    </transition>
-  </teleport>
+    </div>
+  </transition>
 </template>
 
 <script setup>
+defineProps({
+  modelValue: { type: Boolean, required: true },
+  title: { type: String, default: '' },
+  message: { type: String, default: '' },
+})
+
 const emit = defineEmits(['update:modelValue'])
 
 function close() {

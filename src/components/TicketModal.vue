@@ -1,5 +1,4 @@
 <template>
-  <teleport to="body">
     <transition name="fade">
       <div v-if="modelValue" class="ticket-backdrop">
         <!-- KOTAK TERLUAR -->
@@ -57,7 +56,6 @@
         </div>
       </div>
     </transition>
-  </teleport>
 </template>
 
 <script setup>

@@ -1,5 +1,4 @@
 <template>
-  <teleport to="body">
     <transition name="fade">
       <div v-if="modelValue" class="topup-backdrop">
         <div class="topup-card">
@@ -51,7 +50,6 @@
         </div>
       </div>
     </transition>
-  </teleport>
 </template>
 
 <script setup>

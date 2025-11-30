@@ -1,5 +1,4 @@
 <template>
-  <teleport to="body">
     <transition name="fade">
       <div v-if="modelValue" class="modal-backdrop">
         <div class="modal-card">
@@ -93,7 +92,6 @@
         </div>
       </div>
     </transition>
-  </teleport>
 </template>
 
 <script setup>
@@ -173,7 +171,7 @@ function onConfirm() {
     address: fullAddress.value,
     total: total.value,
     amount: props.amount,
-    contractFee: computedContractFee.value, // kirim fee 10%
+    contractFee: computedContractFee.value,
     gasFee: props.gasFee,
   })
   close()
@@ -271,13 +269,13 @@ function onConfirm() {
 
 .btn-cancel {
   @apply flex-1 border border-black bg-black py-2 font-semibold text-[#f5af3d] cursor-pointer;
-  letter-spacing: 0.16em;
+  letter-spacing: 0.05em;
 }
 
 .btn-confirm {
   @apply flex-1 border border-transparent py-2 font-semibold text-black cursor-pointer;
   background-color: #f5af3d;
-  letter-spacing: 0.16em;
+  letter-spacing: 0.05em;
 }
 
 /* TRANSITION */
