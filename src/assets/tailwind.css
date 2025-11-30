@@ -1,0 +1,25 @@
+@config "../../tailwind.config.js";
+@import "tailwindcss";
+
+/* Global base styles using Tailwind utilities */
+@layer base {
+  html, body, #app {
+    @apply min-h-screen bg-body text-white antialiased;
+  }
+
+  img {
+    @apply max-w-full block;
+  }
+
+  a {
+    @apply no-underline transition-colors text-amber-300;
+  }
+
+  a:hover {
+    @apply text-amber-200;
+  }
+
+  /* button {
+    @apply font-sans;
+  } */
+}

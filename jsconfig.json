@@ -1,0 +1,19 @@
+{
+  "compilerOptions": {
+    "paths": {
+      "@/*": [
+        "./src/*"
+      ]
+    }
+  },
+  "exclude": [
+    "node_modules",
+    "dist",
+    "src/components/DrawerNav.vue",
+    "src/components/HelloWorld.vue",
+    "src/components/TheWelcome.vue",
+    "src/components/WelcomeItem.vue",
+    "src/views/AboutView.vue",
+    "src/components/WalletConnect.vue"
+  ]
+}
