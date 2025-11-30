@@ -1,5 +1,5 @@
-@config "../../tailwind.config.js";
 @import "tailwindcss";
+@config "../../tailwind.config.js";
 
 /* Global base styles using Tailwind utilities */
 @layer base {
