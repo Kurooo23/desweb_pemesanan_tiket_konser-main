@@ -142,4 +142,17 @@ const offices = [
 .copy {
   @apply mt-4 text-sm opacity-80 text-slate-900;
 }
+@media (max-width: 640px) {
+  .footer-row {
+    /* Contact us di kiri, Balikpapan di kanan */
+    @apply pl-4 pr-4
+           flex-row justify-between items-start gap-6;
+  }
+
+  .brand-cell,
+  .office-cell {
+    /* bagi dua lebar, biar muat berdampingan */
+    @apply w-1/2;
+  }
+}
 </style>

@@ -225,7 +225,7 @@ function showTicket(row) {
 }
 
 .profile-title {
-  @apply text-left text-[28px] font-bold text-[#f7a930];
+  @apply text-left text-[48px] font-bold text-[#f7a930];
 }
 
 .profile-hamburger {
@@ -319,7 +319,7 @@ function showTicket(row) {
 }
 
 .wallet-unit {
-  @apply text-[32px];
+  @apply text-[56px];
 }
 
 .wallet-account {
@@ -363,5 +363,29 @@ function showTicket(row) {
   .profile-main {
     @apply px-4;
   }
+  .profile-card {
+    @apply w-[95px] h-[95px] rounded-xl bg-[#6b0a00] flex flex-col justify-center px-4 py-2;
+  }
+
+  .avatar-inner {
+    @apply w-[60px] h-[60px] rounded-xl overflow-hidden bg-[#450600];
+  }
+
+  .profile-hamburger {
+    @apply justify-self-end w-7 h-[24px] flex flex-col justify-between bg-transparent border-none;
+  }
+
+  .profile-title {
+    @apply text-left text-[32px] font-bold text-[#f7a930];
+  }
+
+  .wallet-amount {
+    @apply text-[32px] font-bold my-2.5 mt-2.5 mb-5;
+  }
+
+  .wallet-unit {
+    @apply text-[32px];
+  }
+
 }
 </style>

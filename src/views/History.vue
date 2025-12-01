@@ -154,7 +154,7 @@ function showTicket(row) {
 @reference "../assets/tailwind.css";
 @layer components {
   .history-page { @apply min-h-screen flex flex-col bg-[#1e2342] text-slate-50 font-sans; }
-  .history-topbar { @apply grid grid-cols-[auto_1fr_auto] items-center gap-4 px-10 py-4 bg-black; }
+  .history-topbar { @apply sticky top-0 z-50 grid grid-cols-[auto_1fr_auto] items-center gap-4 px-10 py-4 bg-black; }
   .history-logo-wrap { @apply flex items-center; }
   .history-logo { @apply h-10 object-contain; }
   .history-title { @apply text-left text-[22px] font-bold text-[#f7a930]; }
@@ -180,11 +180,13 @@ function showTicket(row) {
   @media (max-width: 960px) {
     .history-main { @apply px-5 py-6 pb-8; }
   }
-  @media (max-width: 640px) {
-    .history-topbar { @apply grid-cols-[auto_auto_auto] px-4 py-3; }
-    .history-title { @apply text-lg; }
-    .history-item-header { @apply flex-col items-start; }
-    .history-btn { @apply self-start; }
+    @media (max-width: 640px) {
+    .history-topbar { @apply grid-cols-[auto_1fr_auto] items-center px-3 py-3;}
+    .history-logo { @apply h-8;}
+    .history-title { @apply text-lg ml-2 justify-self-start;}
+    .history-hamburger { @apply justify-self-end w-7 h-[24px] flex flex-col justify-between bg-transparent border-none;}
+    .history-item-header { @apply flex-col items-start;}
+    .history-btn { @apply self-start;}
   }
 }
 </style>

@@ -71,7 +71,7 @@ const overlayStyle = computed(() => ({
 const goToTicket = (slug) => {
   router.push({
     name: 'event-ticket',
-    params: { slug },          // akan jadi /events=feast /events=so7 /events=gigi
+    params: { slug },
   })
 }
 </script>
@@ -158,15 +158,19 @@ const goToTicket = (slug) => {
 .overlay   { @apply min-h-screen flex flex-col; }
 
 /* ===== TOP BAR ===== */
-.top-bar   { @apply flex items-center gap-6 px-4 py-3 sm:px-6 lg:px-12 bg-black text-white; }
+.top-bar   {   @apply sticky top-0 z-50 flex items-center gap-6 px-4 py-3 sm:px-6 lg:px-12 bg-black text-white; }
 .top-left  { @apply flex items-center; }
 .logo      { @apply h-10 object-contain; }
 
 /* Search bar */
 .top-search   { @apply relative flex-1 max-w-3xl mx-auto; }
 .search-input { @apply w-full rounded-full border-0 outline-none bg-[#f6f2e6] text-black placeholder:text-gray-600 caret-black py-3 pl-5 pr-12; }
-.search-icon  { @apply absolute right-15 top-1/2 -translate-y-1/2 text-[18px]; }
 
+@media (max-width: 640px) {
+  .logo {@apply h-8};
+  .top-search {@apply py-1 pl-1 pr-10; }
+  .menu-button {@apply justify-self-end w-7 h-[24px] flex flex-col justify-between bg-transparent border-none; }
+}
 /* Hamburger */
 .menu-button      { @apply w-9 h-7 flex flex-col justify-between bg-transparent border-0 cursor-pointer; }
 .menu-button span { @apply h-[3px] rounded-full bg-[#f6f2e6]; }
@@ -189,5 +193,6 @@ const goToTicket = (slug) => {
 .meta-label        { @apply font-semibold; }
 .card-desc         { @apply text-xs my-3 leading-relaxed; }
 .btn-buy           { @apply inline-block px-4 py-2 rounded bg-[#ffcc33] font-bold text-black text-xs cursor-pointer; }
+
 
 </style>

@@ -159,7 +159,7 @@ watch(
 
 /* TOP BAR */
 .wallet-topbar {
-  @apply grid grid-cols-[auto_1fr_auto] items-center px-10 py-4 bg-black;
+  @apply sticky top-0 z-50 grid grid-cols-[auto_1fr_auto] items-center px-10 py-4 bg-black;
 }
 
 .wallet-logo {
@@ -194,11 +194,11 @@ watch(
 }
 
 .wallet-balance-value {
-  @apply text-[56px] font-bold my-2.5 mt-2.5 mb-5;
+  @apply text-[48px] font-bold my-2.5 mt-2.5 mb-5;
 }
 
 .wallet-balance-unit {
-  @apply text-[32px];
+  @apply text-[48px];
 }
 
 /* TOP UP BUTTON */
@@ -253,15 +253,31 @@ watch(
 
 @media (max-width: 640px) {
   .wallet-topbar {
-    @apply px-4 py-3 grid-cols-[auto_auto_auto];
+    @apply grid-cols-[auto_1fr_auto] items-center px-3 py-3;
+  }
+
+  .wallet-logo {
+    @apply h-8;
   }
 
   .wallet-title {
-    @apply text-lg ml-3;
+    @apply text-lg ml-2 justify-self-start;
+  }
+
+  .wallet-hamburger {
+    @apply justify-self-end w-7 h-[24px] flex flex-col justify-between bg-transparent border-none cursor-pointer;
+  }
+
+  .wallet-balance-label {
+    @apply text-[#f7a930] text-2xl;
   }
 
   .wallet-balance-value {
-    @apply text-[42px];
+    @apply text-[24px] font-bold my-2.5 mt-2.5 mb-5;
+  }
+
+  .wallet-balance-unit {
+    @apply text-[24px];
   }
 }
 </style>

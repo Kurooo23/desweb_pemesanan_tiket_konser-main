@@ -11,27 +11,31 @@
 </script>
 
 <template>
-  <div class="contact-page">
-    <!-- Drawer -->
-    <DrawerNav v-model="sidebarOpen" />
 
-    <!-- Tombol Hamburger (garis 3) -->
-    <button
+  <div class="contact-page">
+    <header class="about-topbar">
+
+      <!-- Tombol Hamburger (garis 3) -->
+      <button
       class="menu-button"
       aria-label="Open menu"
       :aria-expanded="sidebarOpen ? 'true' : 'false'"
       @click="toggleSidebar"
-    >
+      >
       <span></span><span></span><span></span>
     </button>
 
-    <!-- HERO -->
-    <section class="contact-hero">
-      <div class="hero-inner">
-        <h1>Contact Us</h1>
-        <p>Let's Build Smarter Solutions Together</p>
-      </div>
-    </section>
+    <!-- Drawer -->
+    <DrawerNav v-model="sidebarOpen" />
+    
+      <!-- HERO -->
+      <section class="contact-hero">
+        <div class="hero-inner">
+          <h1>Contact Us</h1>
+          <p>Let's Build Smarter Solutions Together</p>
+        </div>
+      </section>
+    </header>
 
     <!-- INFO & MAPS -->
     <section class="contact-info">
@@ -104,6 +108,7 @@
 @reference "../assets/tailwind.css";
 @layer components {
   .contact-page { @apply min-h-screen flex flex-col bg-[#f6f2e6]; }
+  .about-topbar { @apply sticky top-0 z-50; }
 
   /* HERO */
   .contact-hero { background:#f5af3d; }

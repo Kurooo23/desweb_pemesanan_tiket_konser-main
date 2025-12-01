@@ -156,7 +156,7 @@ function handleConfirm(payload) {
     id: Date.now().toString(),
     title: data.value.title,
     date: data.value.date,
-    booking: payload.address, 
+    booking: payload.address,
     price: `${totalPol} POL`,
     status: 'Successful',
   })
@@ -269,7 +269,7 @@ function handleCancel() {
 
 /* TOP BAR */
 .ticket-topbar {
-  @apply grid grid-cols-[auto_1fr_auto] items-center px-10 py-4 bg-black;
+  @apply sticky top-0 z-50 grid grid-cols-[auto_1fr_auto] items-center px-10 py-4 bg-black;
 }
 
 .left-wrap {
@@ -321,7 +321,7 @@ function handleCancel() {
 
 /* right: text */
 .event-title {
-  @apply text-[26px] tracking-[0.3em] mb-3.5;
+  @apply text-[26px] mb-3.5;
 }
 
 .meta {
@@ -384,4 +384,35 @@ function handleCancel() {
     @apply self-start;
   }
 }
+
+@media (max-width: 640px) {
+  .ticket-topbar {
+    @apply grid-cols-[auto_1fr_auto] px-3 py-3 items-center;
+  }
+
+  .left-wrap {
+    @apply gap-2;
+  }
+
+  .logo {
+    @apply h-8;
+  }
+
+  .title {
+    @apply text-lg ml-2 justify-self-start;
+  }
+
+  .hamburger {
+    @apply justify-self-end w-7 h-[24px] flex flex-col justify-between bg-transparent border-none cursor-pointer;
+  }
+
+  .img-frame {
+    @apply rounded-xl overflow-hidden bg-[#8b1b14];
+  }
+
+  .btn-buy {
+    @apply mt-3 self-end px-[10px] py-1.5 text-[12px];
+  }
+}
+
 </style>

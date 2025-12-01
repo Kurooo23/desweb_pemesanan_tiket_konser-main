@@ -199,4 +199,55 @@ async function downloadTicket() {
 .fade-leave-to {
   @apply opacity-0;
 }
+
+@media (max-width: 640px) {
+  .ticket-shell {
+    @apply w-[96%] px-4 py-5 rounded-2xl gap-4;
+  }
+
+  .ticket-card {
+    @apply px-4 py-4 rounded-2xl;
+  }
+
+  .ticket-inner {
+    @apply flex-col items-center gap-4 px-4 py-4;
+  }
+
+  .ticket-left {
+    @apply w-full flex justify-center;
+  }
+
+  .ticket-img-wrap {
+    @apply w-[100px] h-[100px] rounded-xl;
+  }
+
+  .ticket-right {
+    @apply w-full text-left;
+  }
+
+  .ticket-name {
+    @apply text-lg mb-2 text-center;
+  }
+
+  .ticket-label {
+    @apply text-[11px];
+  }
+
+  .ticket-value {
+    @apply text-[13px];
+  }
+
+  .ticket-id {
+    @apply text-[10px];
+  }
+
+  .ticket-actions {
+    @apply w-full mt-1 flex justify-center gap-3;
+  }
+
+  .ticket-btn {
+    @apply flex-1 px-4 py-2 text-xs;
+  }
+}
+
 </style>

@@ -100,4 +100,26 @@ watch(() => route.fullPath, close)
     color: #6b1b12 !important;
   }
 }
+
+@media (max-width: 640px) {
+  .drawer-panel {
+    /* geser ke bawah header, hampir full width */
+    @apply right-0.5 rounded-2xl p-2;
+    top: 55px;
+    bottom: auto;
+    width: auto;
+
+    /* animasi tetap enak di HP */
+    @apply translate-x-0;
+  }
+
+  .mini-nav {
+    @apply gap-2;
+  }
+
+  .link,
+  .link-btn {
+    @apply py-2.5 px-4 text-sm;
+  }
+}
 </style>
