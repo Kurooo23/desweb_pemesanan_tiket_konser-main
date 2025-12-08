@@ -27,7 +27,7 @@
 
     <!-- Drawer -->
     <DrawerNav v-model="sidebarOpen" />
-    
+
       <!-- HERO -->
       <section class="contact-hero">
         <div class="hero-inner">
@@ -56,7 +56,7 @@
           <ul class="info-list">
             <li>
               <span class="ico">
-                <svg viewBox="0 0 24 24" aria-hidden="true">
+                <svg viewBox="0 0 24 24">
                   <path d="M6.6 10.8c1.7 3.2 3.9 5.4 7.1 7.1l2.4-2.4c.3-.3.8-.4 1.2-.3 1.3.4 2.7.7 4.1.8.5 0 .9.5.9 1v3.9c0 .5-.4 1-1 1C10.9 22 2 13.1 2 2.7 2 2.2 2.5 2 3 2h3.9c.5 0 1 .4 1 .9.1 1.4.4 2.8.8 4.1.1.4 0 .9-.3 1.2L6.6 10.8z"/>
                 </svg>
               </span>
@@ -68,7 +68,7 @@
 
             <li>
               <span class="ico">
-                <svg viewBox="0 0 24 24" aria-hidden="true">
+                <svg viewBox="0 0 24 24">
                   <path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4-8 5L4 8V6l8 5 8-5v2z"/>
                 </svg>
               </span>
@@ -80,7 +80,7 @@
 
             <li>
               <span class="ico">
-                <svg viewBox="0 0 24 24" aria-hidden="true">
+                <svg viewBox="0 0 24 24">
                   <path d="M12 2a7 7 0 0 0-7 7c0 5.2 7 13 7 13s7-7.8 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6a2.5 2.5 0 0 1 0 5z"/>
                 </svg>
               </span>

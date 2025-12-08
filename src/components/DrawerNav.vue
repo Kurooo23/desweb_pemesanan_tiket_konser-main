@@ -19,7 +19,7 @@ watch(() => route.fullPath, close)
 </script>
 
 <template>
-  <div class="drawer" :class="{ 'is-open': isOpen }" aria-hidden="true">
+  <div class="drawer" :class="{ 'is-open': isOpen }">
     <div class="drawer-backdrop" @click="close"></div>
 
     <div class="drawer-panel" role="dialog" aria-modal="true" @click.stop>

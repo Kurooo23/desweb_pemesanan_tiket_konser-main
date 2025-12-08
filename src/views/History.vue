@@ -118,13 +118,13 @@ function showTicket(row) {
             </div>
 
             <div class="history-meta">
+              <p><span class="meta-label">STATUS:</span> {{ row.status }}</p>
               <p><span class="meta-label">DATE:</span> {{ row.date }}</p>
               <p>
                 <span class="meta-label">BOOKING ID:</span>
                 {{ row.booking }}
               </p>
               <p><span class="meta-label">PRICE:</span> {{ row.price }}</p>
-              <p><span class="meta-label">STATUS:</span> {{ row.status }}</p>
             </div>
           </li>
 
@@ -175,7 +175,7 @@ function showTicket(row) {
   .history-meta p { @apply m-0; }
   .meta-label { @apply font-bold; }
 
-  .history-btn { @apply px-[18px] py-1.5 text-[11px] font-bold rounded border-none cursor-pointer bg-[#f6f2e6] text-gray-900; }
+  .history-btn { @apply px-[18px] py-1.5 text-[11px] font-bold rounded border-none cursor-pointer bg-[#f5af3d] text-gray-900 ; }
 
   @media (max-width: 960px) {
     .history-main { @apply px-5 py-6 pb-8; }
