@@ -11,7 +11,6 @@
 </script>
 
 <template>
-
   <div class="contact-page">
     <header class="about-topbar">
 

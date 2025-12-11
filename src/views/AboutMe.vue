@@ -12,24 +12,20 @@
 <template>
   <div class="pribadi-page"
     <header class="cv-me-topbar">
+      <h1>CV Pembuat</h1>
         <button
-        class="menu-button"
-        aria-label="Open menu"
-        :aria-expanded="sidebarOpen ? 'true' : 'false'"
-        @click="toggleSidebar"
-        >
-        <span></span><span></span><span></span>
-      </button>
-    <!-- Drawer -->
-      <DrawerNav v-model="sidebarOpen">
-
-      <!-- HERO -->
-        <section class="contact-hero">
-          <div class="hero-inner">
-            <h1>CV Pembuat</h1>
-          </div>
-        </section>
+          class="menu-button"
+          aria-label="Open menu"
+          :aria-expanded="sidebarOpen ? 'true' : 'false'"
+          @click="toggleSidebar"
+          >
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
     </header>
+
+    <DrawerNav v-model="sidebarOpen">
 
     <section class="cv-info">
       <div class="info-grid">
