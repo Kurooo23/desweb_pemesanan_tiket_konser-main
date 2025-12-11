@@ -29,6 +29,7 @@ watch(() => route.fullPath, close)
         <RouterLink class="link" active-class="active" to="/wallet"  @click="close">Wallet</RouterLink>
         <RouterLink class="link" active-class="active" to="/history" @click="close">History</RouterLink>
         <RouterLink class="link" active-class="active" to="/about"   @click="close">About</RouterLink>
+        <RouterLink class="link" active-class="active" to="/aboutme" @click="close">About Me</RouterLink>
         <RouterLink class="link-btn" to="/logout" @click="close">Log out</RouterLink>
       </nav>
     </div>

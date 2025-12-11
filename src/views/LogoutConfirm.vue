@@ -1,6 +1,7 @@
 <script setup>
 import { onMounted } from 'vue'
 import { useRouter } from 'vue-router'
+import { account } from '@/composables/useMetamask'
 
 const router = useRouter()
 
@@ -8,22 +9,22 @@ function performLogout() {
   // bersihkan kredensial lokal
   localStorage.removeItem('auth_token')
   localStorage.removeItem('walletAddress')
+  localStorage.removeItem('is_logged_in')
 
-  // kalau ada state mgmt lain (Pinia/Vuex), reset di sini juga.
-  // contoh:
-  // const userStore = useUserStore()
-  // userStore.$reset()
+  // reset state wallet metamask
+  account.value = null
 
-  router.replace({ name: 'login' }) // atau { name: 'home' }
+  // arahkan ke halaman login
+  router.replace({ name: 'login' })
 }
 
 function cancelLogout() {
-  // balik ke halaman sebelumnya
+  // balik ke halaman sebelumnya, atau ke home kalau history tipis
   if (window.history.length > 1) router.back()
   else router.replace({ name: 'home' })
 }
 
-// pakai native confirm biar cepat
+// pakai native confirm ketika komponen dimount
 onMounted(() => {
   const ok = window.confirm('Apakah Anda yakin ingin keluar?')
   if (ok) performLogout()

@@ -14,7 +14,23 @@ const router = createRouter({
     { path: '/wallet', name: 'wallet', component: () => import('@/views/Wallet.vue') },
     { path: '/history', name: 'history', component: () => import('@/views/History.vue') },
     { path: '/events=:slug', name: 'event-ticket', component: () => import('@/views/EventTicketView.vue'), props: true, },
+    { path: '/cv', name: 'cv', component: () => import('@/views/AboutMe.vue') },
   ]
+})
+
+router.beforeEach((to, from, next) => {
+  const isLoggedIn = localStorage.getItem('is_logged_in') === 'true'
+
+  if (!isLoggedIn && to.name !== 'login') {
+    return next({ name: 'login' })
+  }
+
+  if (isLoggedIn && to.name === 'login') {
+    // sudah login tapi balik ke login, arahkan ke home
+    return next({ name: 'home' })
+  }
+
+  next()
 })
 
 export default router

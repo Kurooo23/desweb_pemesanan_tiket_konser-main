@@ -3,7 +3,6 @@ import { ref, computed } from 'vue'
 import { useRouter } from 'vue-router'
 import DrawerNav from '@/components/DrawerNav.vue'
 
-
 // background & gambar konser
 import bgHome from '@/assets/home_background.png'
 import imgFeast from '@/assets/Feast_Foto.jpg'

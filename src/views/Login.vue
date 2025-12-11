@@ -1,67 +1,6 @@
 <!-- eslint-disable vue/multi-word-component-names -->
-<template>
-  <div class="login-page">
-    <div class="login-container">
-      <img src="/logo_with_text.png" alt="Logo" class="logo" />
-      <h1>Selamat Datang!</h1>
-
-      <p v-if="!hasMetaMask" class="hint">
-        Pastikan Anda telah memasang ekstensi MetaMask pada browser Anda atau aplikasi MetaMask pada perangkat seluler Anda.
-      </p>
-
-      <p class="subtitle">Hubungkan wallet MetaMask untuk masuk</p>
-
-      <!-- Status Message -->
-      <div v-if="statusMessage" :class="['status-message', statusType]">
-        {{ statusMessage }}
-      </div>
-
-      <!-- Wallet Info -->
-      <div v-if="walletAddress" class="wallet-info">
-        <div class="wallet-label">
-          <img :src="metaMaskIcon" class="mm-ico" alt="MetaMask" />
-          <span>Wallet Terhubung</span>
-        </div>
-        <div class="wallet-address">{{ shortenAddress(walletAddress) }}</div>
-      </div>
-
-      <!-- Tombol Connect / Masuk -->
-      <button
-        v-if="!walletAddress"
-        @click="connectMetaMask"
-        :disabled="isConnecting"
-        class="btn-metamask"
-      >
-        <template v-if="isConnecting">
-          ⏳ Menghubungkan...
-        </template>
-        <template v-else>
-          <img :src="metaMaskIcon" class="mm-ico mm-ico--btn" alt="MetaMask" />
-          <span class="btn-label">Hubungkan MetaMask</span>
-        </template>
-      </button>
-
-      <button
-        v-else
-        @click="loginAccount"
-        :disabled="islogining"
-        class="btn-login"
-      >
-        <span v-if="islogining">⏳ Mendaftarkan...</span>
-        <span v-else>Masuk</span>
-      </button>
-
-      <div v-if="!hasMetaMask" class="metamask-warning">
-        <p>⚠️ MetaMask tidak terdeteksi!</p>
-        <a href="https://metamask.io/download/" target="_blank" class="install-link">
-          Install MetaMask
-        </a>
-      </div>
-    </div>
-  </div>
-</template>
-
 <script setup>
+defineOptions({ name: 'LoginPage' })
 import { ref, watch, onMounted } from 'vue'
 import { useRouter } from 'vue-router'
 import { getAddress } from 'ethers'
@@ -159,6 +98,68 @@ async function loginAccount() {
   }
 }
 </script>
+<template>
+  <div class="login-page">
+    <div class="login-container">
+      <img src="/logo_with_text.png" alt="Logo" class="logo" />
+      <h1>Selamat Datang!</h1>
+
+      <p v-if="!hasMetaMask" class="hint">
+        Pastikan Anda telah memasang ekstensi MetaMask pada browser Anda atau aplikasi MetaMask pada perangkat seluler Anda.
+      </p>
+
+      <p class="subtitle">Hubungkan wallet MetaMask untuk masuk</p>
+
+      <!-- Status Message -->
+      <div v-if="statusMessage" :class="['status-message', statusType]">
+        {{ statusMessage }}
+      </div>
+
+      <!-- Wallet Info -->
+      <div v-if="walletAddress" class="wallet-info">
+        <div class="wallet-label">
+          <img :src="metaMaskIcon" class="mm-ico" alt="MetaMask" />
+          <span>Wallet Terhubung</span>
+        </div>
+        <div class="wallet-address">{{ shortenAddress(walletAddress) }}</div>
+      </div>
+
+      <!-- Tombol Connect / Masuk -->
+      <button
+        v-if="!walletAddress"
+        @click="connectMetaMask"
+        :disabled="isConnecting"
+        class="btn-metamask"
+      >
+        <template v-if="isConnecting">
+          ⏳ Menghubungkan...
+        </template>
+        <template v-else>
+          <img :src="metaMaskIcon" class="mm-ico mm-ico--btn" alt="MetaMask" />
+          <span class="btn-label">Hubungkan MetaMask</span>
+        </template>
+      </button>
+
+      <button
+        v-else
+        @click="loginAccount"
+        :disabled="islogining"
+        class="btn-login"
+      >
+        <span v-if="islogining">⏳ Mendaftarkan...</span>
+        <span v-else>Masuk</span>
+      </button>
+
+      <div v-if="!hasMetaMask" class="metamask-warning">
+        <p>⚠️ MetaMask tidak terdeteksi!</p>
+        <a href="https://metamask.io/download/" target="_blank" class="install-link">
+          Install MetaMask
+        </a>
+      </div>
+    </div>
+  </div>
+</template>
+
 
 <style scoped>
 @reference "../assets/tailwind.css";
@@ -176,7 +177,7 @@ async function loginAccount() {
 }
 
 h1 {
-  @apply text-gray-800 mb-2 text-[1.8rem];
+  @apply text-gray-800 mb-2 text-[2rem];
 }
 
 .subtitle {

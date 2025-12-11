@@ -10,7 +10,7 @@ export default {
         'mute': '#111826',
         'border-soft': '#222938',
         'border-hover': '#2b3243',
-        brand: '#6B0A00',
+        'brand': '#6B0A00',
         'brand-soft': '#8c1105',
         'brand-yellow': '#f5af3d',
         'white': '#ffffff',
