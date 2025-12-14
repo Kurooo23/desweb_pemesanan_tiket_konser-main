@@ -17,7 +17,7 @@ watch(
 )
 
 // saldo awal (kalau belum ada di localStorage)
-const balancePol = ref(8)
+const balancePol = ref(0)
 
 // transaksi: tanpa dummy, hanya data dari localStorage / runtime
 const transactions = ref([])
